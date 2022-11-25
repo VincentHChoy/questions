@@ -45,3 +45,20 @@ function createCheckDigit(membershipId) {
 }
 
 console.log(createCheckDigit("55555"));
+
+let catPicture = fetch('https://api.thecatapi.com/v1/images/search').then((res) => {
+  return res.json()
+}).then(result => console.log(result[0].url))
+
+
+function findTwoSum(numbers, sum) {
+  for (let i = 0; i < numbers.length; i++) {
+    let target = sum - numbers[i]
+    if (numbers.indexOf(target) !== -1) return [i, numbers.indexOf(target)]
+
+  }
+  return null
+}
+
+const indices = findTwoSum([5, 1, 5, 7, 5, 9], 10);
+console.log(indices);
